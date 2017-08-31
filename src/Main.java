@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static ArrayList<InventoryItem> itemList = new ArrayList<>();
+    private static ArrayList<InventoryItem> itemList = new ArrayList<>();
 
     private static void printList() {
         System.out.println("We currently have the following: ");
@@ -37,6 +37,7 @@ public class Main {
                 case 2:
                     System.out.println("Enter the number of the item you'd like to remove.");
                     printList();
+                    System.out.println();
                     int removeItem = Integer.parseInt(scanner.nextLine());
                     itemList.remove(removeItem - 1);
                     break;
@@ -58,7 +59,7 @@ public class Main {
             }
 
         } catch (Exception e) {
-            System.out.println("You must enter a number!");
+            System.out.println("Invalid selection!");
         }
 
 
@@ -69,7 +70,6 @@ public class Main {
         System.out.println("Hello and welcome to the inventory tracker system!");
         System.out.println();
 
-        //initialize the list
         itemList.add(new InventoryItem(5, "books"));
 
         while (true) {
@@ -79,6 +79,4 @@ public class Main {
             System.out.println();
         }
     }
-
-
 }
